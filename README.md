@@ -72,6 +72,11 @@ This tool helps Developers/Founders or CXO to quickly experiment with data and g
 ## Getting Started
 
 To get started clone this project or download the released jar file.
+In your directory 
+```
+java -jar dskube.jar
+```
+Navigate to http://localhost:8080
 
 ### Prerequisites
 

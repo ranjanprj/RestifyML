@@ -1,4 +1,4 @@
-package com.rebataur.imbuedintelligence.entities;
+package com.rebataur.dskube.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

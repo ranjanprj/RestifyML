@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.imbuedintelligence;
+package com.rebataur.dskube;
 
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +41,7 @@ import tech.tablesaw.plotly.traces.Trace;
  * Note that the value of overlaying in the axis for trace 2, references the axis used by trace 1.
  */
 public class TestPlot {
-   private final static String UPLOAD_DIR = "C:\\3Projects\\imbuedintelligence\\uploads\\";
+   private final static String UPLOAD_DIR = "C:\\3Projects\\dskube\\uploads\\";
   public static void main(String[] args) throws Exception {
       
  

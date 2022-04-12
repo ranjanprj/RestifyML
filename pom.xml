@@ -8,10 +8,10 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rebataur</groupId>
-    <artifactId>imbuedintelligence</artifactId>
+    <artifactId>dskube</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dcounsel</name>
-    <description>Demo project for Spring Boot</description>
+    <name>dskube</name>
+    <description>AI/ML Tool</description>
     <properties>
         <java.version>11</java.version>
     </properties>

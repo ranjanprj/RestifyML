@@ -1,4 +1,4 @@
-package com.rebataur.imbuedintelligence;
+package com.rebataur.dskube;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Testing {
 
     public static void main(String[] args) throws IOException {
         print("==============================");
-        Table table = Table.read().csv("C:\\3Projects\\imbuedintelligence\\uploads\\corona_ref_data.csv");
+        Table table = Table.read().csv("C:\\3Projects\\dskube\\uploads\\corona_ref_data.csv");
         print(table.column("gender").unique().asList().stream().filter(x -> x.toString().length() > 0).collect(Collectors.toList()));
         List<?> list = table.column("gender").unique().asList().stream().filter(x -> x.toString().length() > 0).collect(Collectors.toList());
          

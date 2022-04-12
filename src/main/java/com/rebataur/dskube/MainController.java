@@ -1,11 +1,11 @@
-package com.rebataur.imbuedintelligence;
+package com.rebataur.dskube;
 
-import com.rebataur.imbuedintelligence.entities.DataColumn;
-import com.rebataur.imbuedintelligence.entities.DataSource;
-import com.rebataur.imbuedintelligence.entities.Experiment;
-import com.rebataur.imbuedintelligence.repositories.ColumnRepository;
-import com.rebataur.imbuedintelligence.repositories.DataSourceRepository;
-import com.rebataur.imbuedintelligence.repositories.ExperimentRepository;
+import com.rebataur.dskube.entities.DataColumn;
+import com.rebataur.dskube.entities.DataSource;
+import com.rebataur.dskube.entities.Experiment;
+import com.rebataur.dskube.repositories.ColumnRepository;
+import com.rebataur.dskube.repositories.DataSourceRepository;
+import com.rebataur.dskube.repositories.ExperimentRepository;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -40,7 +40,7 @@ public class MainController {
     private ColumnRepository columnRepository;
 
     // relative path
-    private final String UPLOAD_DIR = "..\\imbuedintelligence_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
 
 //    @Autowired
 //    public MainController(ExperimentRepository experimentRepository, DataSourceRepository dataSourceRepository, ColumnRepository columnRepository) {

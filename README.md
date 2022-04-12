@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/rebataur/dcounsel">
+  <a href="https://github.com/rebataur/dskube">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -15,14 +15,14 @@
   <p align="center">
     AI/ML For All!
     <br />
-    <a href="https://github.com/rebataur/dcounsel"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/rebataur/dskube"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/rebataur/dcounsel">View Demo</a>
+    <a href="https://github.com/rebataur/dskube">View Demo</a>
     ·
-    <a href="https://github.com/rebataur/dcounsel/issues">Report Bug</a>
+    <a href="https://github.com/rebataur/dskube/issues">Report Bug</a>
     ·
-    <a href="https://github.com/rebataur/dcounsel/issues">Request Feature</a>
+    <a href="https://github.com/rebataur/dskube/issues">Request Feature</a>
   </p>
 </div>
 
@@ -85,20 +85,20 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. To run download the latest release jar file
    ```sh
-   java -jar dcounsel.jar
+   java -jar dskube.jar
    ```
 2. To build yourself, clone the repo
    ```sh
-   git clone https://github.com/rebataur/dcounsel
+   git clone https://github.com/rebataur/dskube
    ```
 3. Install NPM packages
    ```sh
-   cd dcounsel
+   cd dskube
    mvn clean package
    ```
 4. Run the jar file
    ```sh
-   java -jar target/dcounsel.jar
+   java -jar target/dskube.jar
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -116,7 +116,7 @@ _Below is an example of how you can instruct your audience on installing and set
     - [ ] Models
     - [ ] API
 
-See the [open issues](https://github.com/rebataur/dcounsel/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/rebataur/dskube/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -154,7 +154,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@rebataur](https://twitter.com/rebataur) - hello@rebataur.com
 
-Project Link: [https://github.com/rebataur/dcounsel](https://github.com/rebataur/dcounsel)
+Project Link: [https://github.com/rebataur/dskube](https://github.com/rebataur/dskube)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

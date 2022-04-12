@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.imbuedintelligence;
+package com.rebataur.dskube;
 
 import java.io.IOException;
 import tech.tablesaw.api.ColumnType;
@@ -16,7 +16,7 @@ import tech.tablesaw.io.csv.CsvReader;
 
 public class Test {
 
-    private final static String UPLOAD_DIR = "C:\\3Projects\\imbuedintelligence\\uploads\\";
+    private final static String UPLOAD_DIR = "C:\\3Projects\\dskube\\uploads\\";
 
     public static void main(String[] args) throws IOException {
         Table t = Table.read().csv(UPLOAD_DIR + "corona_ref_data.csv");

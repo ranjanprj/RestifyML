@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.imbuedintelligence.ml;
+package com.rebataur.dskube.ml;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
-import com.rebataur.imbuedintelligence.ModelBuildingDTO;
-import com.rebataur.imbuedintelligence.entities.DataColumn;
-import com.rebataur.imbuedintelligence.entities.DataSource;
-import com.rebataur.imbuedintelligence.entities.Experiment;
-import com.rebataur.imbuedintelligence.repositories.ColumnRepository;
-import com.rebataur.imbuedintelligence.repositories.DataSourceRepository;
-import com.rebataur.imbuedintelligence.repositories.ExperimentRepository;
+import com.rebataur.dskube.ModelBuildingDTO;
+import com.rebataur.dskube.entities.DataColumn;
+import com.rebataur.dskube.entities.DataSource;
+import com.rebataur.dskube.entities.Experiment;
+import com.rebataur.dskube.repositories.ColumnRepository;
+import com.rebataur.dskube.repositories.DataSourceRepository;
+import com.rebataur.dskube.repositories.ExperimentRepository;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,7 +54,7 @@ public class Classification {
     @Autowired
     private ColumnRepository columnRepository;
 
-    private final String UPLOAD_DIR = "..\\imbuedintelligence_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
 
     public ModelBuildingDTO classify(long id, ModelBuildingDTO mDTO) throws IOException, ClassNotFoundException, com.opencsv.exceptions.CsvException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));

@@ -1,10 +1,10 @@
-// package com.rebataur.imbuedintelligence;
+// package com.rebataur.dskube;
 
 // import org.junit.jupiter.api.Test;
 // import org.springframework.boot.test.context.SpringBootTest;
 
 // @SpringBootTest
-// class ImbuedintelligenceApplicationTests {
+// class dskubeApplicationTests {
 
 // 	@Test
 // 	void contextLoads() {

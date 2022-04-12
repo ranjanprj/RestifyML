@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.imbuedintelligence;
+package com.rebataur.dskube;
 
 import java.nio.file.Paths;
 import java.nio.file.Files;

@@ -72,6 +72,11 @@ This tool helps Developers/Founders or CXO to quickly experiment with data and g
 ## Getting Started
 
 To get started clone this project or download the released jar file.
+In your directory 
+```
+java -jar dskube.jar
+```
+Navigate to http://localhost:8080
 
 ### Prerequisites
 
@@ -152,7 +157,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@rebataur](https://twitter.com/rebataur) - hello@rebataur.com
+Twitter - [@rebataur](https://twitter.com/rebataur)
+
+Email - hello at rebataur.com
 
 Project Link: [https://github.com/rebataur/dskube](https://github.com/rebataur/dskube)
 

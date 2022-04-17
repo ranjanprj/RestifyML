@@ -9,14 +9,17 @@
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-           <h1 class="display-4">DSKube</h1> 
+                <h1 class="display-4">DSKube</h1> 
 
-                <p class="lead">Standalone open-source self service Ai/ML tool </p>   
+
+                <div class="alert alert-success" role="alert">
+                 Standalone open-source self service AI/ML tool for Developers
+                </div>
                 <a  th:href="@{/newexperiment}" class="btn btn-success">Create a New Experiment</a>
 
                 </p>
                 <div class="row">
-                    
+
                     <div th:each = "experiment: ${experiments}" class="card border-success col col-md-3 px-md-2" style="margin:1em" >
                         <div class="card-header bg-transparent border-success">Experiment</div>
                         <div class="card-body text-success">
@@ -30,7 +33,7 @@
 
                         </div>
                     </div>
-              
+
 
 
                 </div>

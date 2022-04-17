@@ -95,11 +95,11 @@
             <artifactId>tablesaw-jsplot</artifactId>
             <version>0.42.0</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.github.haifengl</groupId>
             <artifactId>smile-core</artifactId>
             <version>2.6.0</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>org.tribuo</groupId>
             <artifactId>tribuo-all</artifactId>

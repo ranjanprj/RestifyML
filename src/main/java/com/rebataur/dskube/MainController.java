@@ -223,6 +223,16 @@ public class MainController {
         model.addAttribute("columns", experiment.getDatasource().getDataColumn());
         return "datascience/modelbuilding";
     }
+    
+      @GetMapping("/experiment/{id}/restapi")
+    public String restAPI(@PathVariable("id") long id, Model model) throws IOException {
+        Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
+
+        model.addAttribute("experiment", experiment);
+        model.addAttribute("columns", experiment.getDatasource().getDataColumn());
+        return "datascience/restapi";
+    }
+
 
       @GetMapping("/experiment/{id}/modelbuilding/{algo}")
     public String modelBuildingAlgo(@PathVariable("id") long id, @PathVariable("algo") String algo,Model model) throws IOException {

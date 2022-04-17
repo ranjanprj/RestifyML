@@ -198,7 +198,7 @@ public class Regression {
         writer.writeNext(csvData);
         writer.close();
         System.out.println(target);
-        var irisesSource = csvLoader.loadDataSource(Paths.get(UPLOAD_DIR + "temprequestfile.csv"), "quality");
+        var irisesSource = csvLoader.loadDataSource(Paths.get(UPLOAD_DIR + "temprequestfile.csv"), target);
 //        var irisSplitter = new TrainTestSplitter<>(irisesSource, mDTO.getTrainProportion() / 100, 1l);
 //        var trainingDataset = new MutableDataset<>(irisSplitter.getTrain());
         MutableDataset<Regressor> testingDataset = new MutableDataset<Regressor>(irisesSource);

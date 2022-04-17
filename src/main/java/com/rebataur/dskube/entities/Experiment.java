@@ -28,4 +28,5 @@ public class Experiment implements Serializable {
     private int seed;
     private double trainProportion;
  
+    private String type;
 }

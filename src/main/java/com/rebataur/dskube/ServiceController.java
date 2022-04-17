@@ -56,7 +56,7 @@ public class ServiceController {
     private DataSourceRepository dataSourceRepository;
     @Autowired
     private ColumnRepository columnRepository;
-    
+
     @Autowired
     private Classification classification;
     @Autowired
@@ -220,12 +220,15 @@ public class ServiceController {
     @PostMapping("/experiment/{id}/modelbuilding/{mltype}")
     public ModelBuildingDTO modelBuilding(@PathVariable("id") long id, @RequestBody ModelBuildingDTO mDTO, @PathVariable("mltype") String mlType) throws IOException, ClassNotFoundException, com.opencsv.exceptions.CsvException {
         System.out.println(mlType);
+        Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
+        experiment.setType(mlType);
+        experimentRepository.save(experiment);
         if (mlType.equals("classify")) {
             return classification.classify(id, mDTO);
         } else if (mlType.equals("regression")) {
             return regression.regression(id, mDTO);
         }
-        
+
         return mDTO;
     }
 
@@ -233,7 +236,14 @@ public class ServiceController {
     public String invokeModel(@PathVariable("id") long id, @RequestBody String json) throws IOException, ClassNotFoundException, com.opencsv.exceptions.CsvException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
         List<DataColumn> dcs = experiment.getDatasource().getDataColumn();
-        return regression.invokeModel(id, json);
+
+        if (experiment.getType().equals("classify")) {
+            return classification.invokeModel(id, json);
+        } else if (experiment.getType().equals("regression")) {
+            return regression.invokeModel(id, json);
+        }
+
+//        return regression.invokeModel(id, json);
 //        ObjectMapper mapper = new ObjectMapper();
 //        JsonNode node = mapper.readTree(json);
 //

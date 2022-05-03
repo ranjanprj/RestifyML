@@ -123,7 +123,7 @@ public class Regression {
 
         String modelFileName = experiment.getName() + "_MODEL.ser";
         File tmpFile = new File(UPLOAD_DIR + modelFileName);
-        try ( ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(tmpFile))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(tmpFile))) {
             oos.writeObject(xgbModel);
         }
         com.rebataur.dskube.entities.DataSource ds = dataSourceRepository.findById(experiment.getDatasource().getId()).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));;
@@ -176,13 +176,30 @@ public class Regression {
 
         var regressionFactory = new RegressionFactory();
         var csvLoader = new CSVLoader<>(regressionFactory);
-        var irisHeaders = new String[dcs.size()];
+        var newheaders = new String[dcs.size()];
         String[] csvData = new String[dcs.size()];
         String target = "";
         for (int i = 0; i < dcs.size(); i++) {
-            irisHeaders[i] = dcs.get(i).getName();
-            JsonNode nodeValue = node.at("/" + dcs.get(i).getName());
-            csvData[i] = nodeValue.toString();
+            newheaders[i] = dcs.get(i).getName();
+            String colname = "";
+            String colvalue = "";
+             JsonNode nodeValue = null;
+            if (dcs.get(i).getName().contains("_")) {
+                colname = dcs.get(i).getName().split("_")[0];
+                colvalue = dcs.get(i).getName().split("_")[1];
+                nodeValue = node.at("/" + colname);
+                if (nodeValue.equals(colvalue)) {
+                    csvData[i] = "1";
+                } else {
+                    csvData[i] = "0";
+                }
+
+            } else {
+                nodeValue = node.at("/" + dcs.get(i).getName());
+
+                csvData[i] = nodeValue.toString();
+            }
+            // put random number to suffice the model execution
             if (nodeValue.toString().replaceAll("\"", "").equals("target")) {
                 target = dcs.get(i).getName();
                 csvData[i] = String.valueOf(-9999);
@@ -194,7 +211,7 @@ public class Regression {
 
         FileWriter outputfile = new FileWriter(UPLOAD_DIR + "temprequestfile.csv");
         CSVWriter writer = new CSVWriter(outputfile);
-        writer.writeNext(irisHeaders);
+        writer.writeNext(newheaders);
         writer.writeNext(csvData);
         writer.close();
         System.out.println(target);
@@ -208,7 +225,7 @@ public class Regression {
         String filterPattern = Files.readAllLines(Paths.get(UPLOAD_DIR + "jep-290-filter.txt")).get(0);
         ObjectInputFilter filter = ObjectInputFilter.Config.createFilter(filterPattern);
         org.tribuo.Model<Regressor> loadedModel;
-        try ( ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(UPLOAD_DIR + experiment.getDatasource().getModelFileName())))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(UPLOAD_DIR + experiment.getDatasource().getModelFileName())))) {
             ois.setObjectInputFilter(filter);
             loadedModel = (org.tribuo.Model<Regressor>) ois.readObject();
         }

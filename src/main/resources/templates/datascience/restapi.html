@@ -53,7 +53,7 @@
                             <tr><td>http://localhost:8080/experiment/<span th:text="${experiment.id}"></span><span>/invokemodel</span></td></tr>
                             <tr><td>{</td></tr>
                             <tr th:each="col : ${columns}">
-                                <td ><span>"</span><span th:text="${col.name}"></span><span>":</span></td><td>,</td>
+                                <td ><span>"</span><span th:text="${col}"></span><span>":</span></td><td>,</td>
                             </tr>
                               <tr><td>}</td></tr>
                         </table>

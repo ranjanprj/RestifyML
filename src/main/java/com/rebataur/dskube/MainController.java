@@ -11,7 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,9 +27,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import tech.tablesaw.api.Table;
 import tech.tablesaw.io.csv.CsvReadOptions;
-import tech.tablesaw.io.csv.CsvReader;
 
 @Controller
 public class MainController {
@@ -158,8 +158,7 @@ public class MainController {
         model.addAttribute("columns", experiment.getDatasource().getDataColumn());
         return "datascience/dataexploration";
     }
-    
-    
+
     @GetMapping("/experiment/{id}/featurebuilding")
     public String featureBuilding(@PathVariable("id") long id, Model model) throws IOException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
@@ -213,8 +212,6 @@ public class MainController {
         return "datascience/featurebuilding";
     }
 
-
-    
     @GetMapping("/experiment/{id}/modelbuilding")
     public String modelBuilding(@PathVariable("id") long id, Model model) throws IOException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
@@ -223,19 +220,28 @@ public class MainController {
         model.addAttribute("columns", experiment.getDatasource().getDataColumn());
         return "datascience/modelbuilding";
     }
-    
-      @GetMapping("/experiment/{id}/restapi")
+
+    @GetMapping("/experiment/{id}/restapi")
     public String restAPI(@PathVariable("id") long id, Model model) throws IOException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
 
         model.addAttribute("experiment", experiment);
-        model.addAttribute("columns", experiment.getDatasource().getDataColumn());
+        List<DataColumn> columns = experiment.getDatasource().getDataColumn();
+        Set<String> colsset = new HashSet<String>();
+        for (int i = 0; i < columns.size(); i++) {
+            if (columns.get(i).getName().contains("_")) {
+                colsset.add(columns.get(i).getName().split("_")[0]);
+            } else {
+                colsset.add(columns.get(i).getName());
+            }
+        }
+        
+        model.addAttribute("columns", colsset);
         return "datascience/restapi";
     }
 
-
-      @GetMapping("/experiment/{id}/modelbuilding/{algo}")
-    public String modelBuildingAlgo(@PathVariable("id") long id, @PathVariable("algo") String algo,Model model) throws IOException {
+    @GetMapping("/experiment/{id}/modelbuilding/{algo}")
+    public String modelBuildingAlgo(@PathVariable("id") long id, @PathVariable("algo") String algo, Model model) throws IOException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));
         DataSource ds = experiment.getDatasource();
         model.addAttribute("columns", experiment.getDatasource().getDataColumn());
@@ -244,8 +250,6 @@ public class MainController {
         return "datascience/types/" + algo;
     }
 
-    
-    
     @PostMapping("/upload/experiment/{id}")
     public String uploadFile(@PathVariable("id") long id, Model model, @RequestParam("file") MultipartFile file, RedirectAttributes attributes) {
         // check if file is empty

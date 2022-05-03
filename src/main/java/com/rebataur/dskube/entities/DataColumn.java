@@ -1,17 +1,15 @@
 package com.rebataur.dskube.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import lombok.Data;
-import org.checkerframework.checker.units.qual.A;
 
 @Entity
 @Data
@@ -25,7 +23,7 @@ public class DataColumn implements Serializable {
     private String name, type;
     private String actualType;
     private String treatmentType;
-
-
-
+    private String originalNamePreSplit;
+    
+    
 }

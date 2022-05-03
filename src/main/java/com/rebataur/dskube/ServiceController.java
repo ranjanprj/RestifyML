@@ -165,22 +165,22 @@ public class ServiceController {
 //            }else if(dc.getActualType().equals("date")){
 //                 newList = new ArrayList<Date>();
 //            }
-                if (list.size() == 2) {
-                    // binary convert to 0's and 1's
-                    for (int i = 0; i < t.rowCount(); i++) {
-                        String v = t.column(col.getName()).get(i).toString();
-                        if (v.equals(list.get(0))) {
-                            newList[i] = 0;
-                        } else {
-                            newList[i] = 1;
-                        }
-
-                    }
-                    t.removeColumns(col.getName());
-                    IntColumn column = IntColumn.create(col.getName(), newList);
-                    t.addColumns(column);
-
-                } else if (list.size() > 2) {
+//                if (false && list.size() == 2) {
+//                    // binary convert to 0's and 1's
+//                    for (int i = 0; i < t.rowCount(); i++) {
+//                        String v = t.column(col.getName()).get(i).toString();
+//                        if (v.equals(list.get(0))) {
+//                            newList[i] = 0;
+//                        } else {
+//                            newList[i] = 1;
+//                        }
+//
+//                    }
+//                    t.removeColumns(col.getName());
+//                    IntColumn column = IntColumn.create(col.getName(), newList);
+//                    t.addColumns(column);
+//
+//                } else if (true && list.size() > 2) {
 
                     // for each item create new columns
                     for (int k = 0; k < list.size(); k++) {
@@ -203,7 +203,7 @@ public class ServiceController {
                         t.addColumns(column);
                     }
                     t.removeColumns(col.getName());
-                }
+//                }
             }
         }
 
@@ -242,7 +242,7 @@ public class ServiceController {
         } else if (experiment.getType().equals("regression")) {
             return regression.invokeModel(id, json);
         }
-
+        return null;
 //        return regression.invokeModel(id, json);
 //        ObjectMapper mapper = new ObjectMapper();
 //        JsonNode node = mapper.readTree(json);

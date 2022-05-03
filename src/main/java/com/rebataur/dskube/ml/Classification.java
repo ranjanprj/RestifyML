@@ -132,15 +132,44 @@ public class Classification {
 
         var labelFactory = new LabelFactory();
         var csvLoader = new CSVLoader<>(labelFactory);
-        var irisHeaders = new String[dcs.size()];
+        var newheaders = new String[dcs.size()];
         String[] csvData = new String[dcs.size()];
         String target = "";
-        for (int i = 0; i < dcs.size(); i++) {
-            irisHeaders[i] = dcs.get(i).getName();
-            JsonNode nodeValue = node.at("/" + dcs.get(i).getName());
-            csvData[i] = nodeValue.toString();
+//        for (int i = 0; i < dcs.size(); i++) {
+//            irisHeaders[i] = dcs.get(i).getName();
+//            JsonNode nodeValue = node.at("/" + dcs.get(i).getName());
+//            csvData[i] = nodeValue.toString();
+//            if (nodeValue.toString().replaceAll("\"", "").equals("target")) {
+//                target = dcs.get(i).getName();
+//                System.out.println(dcs.get(i).getName());
+//                System.out.println(target);
+//            }
+//            System.out.println(nodeValue);
+//        }
+        
+            for (int i = 0; i < dcs.size(); i++) {
+            newheaders[i] = dcs.get(i).getName();
+            String colname = "";
+            String colvalue = "";
+             JsonNode nodeValue = null;
+            if (dcs.get(i).getName().contains("_")) {
+                colname = dcs.get(i).getName().split("_")[0];
+                colvalue = dcs.get(i).getName().split("_")[1];
+                nodeValue = node.at("/" + colname);
+                if (nodeValue.equals(colvalue)) {
+                    csvData[i] = "1";
+                } else {
+                    csvData[i] = "0";
+                }
+
+            } else {
+                nodeValue = node.at("/" + dcs.get(i).getName());
+
+                csvData[i] = nodeValue.toString();
+            }
+            // put random number to suffice the model execution
             if (nodeValue.toString().replaceAll("\"", "").equals("target")) {
-                target = dcs.get(i).getName();
+                target = dcs.get(i).getName();               
                 System.out.println(dcs.get(i).getName());
                 System.out.println(target);
             }
@@ -153,7 +182,7 @@ public class Classification {
         writer.writeNext(csvData);
         writer.close();
         System.out.println(target);
-        var irisesSource = csvLoader.loadDataSource(Paths.get(UPLOAD_DIR + "temprequestfile.csv"), target, irisHeaders);
+        var irisesSource = csvLoader.loadDataSource(Paths.get(UPLOAD_DIR + "temprequestfile.csv"), target, newheaders);
 //        var irisSplitter = new TrainTestSplitter<>(irisesSource, mDTO.getTrainProportion() / 100, 1l);
 //        var trainingDataset = new MutableDataset<>(irisSplitter.getTrain());
         MutableDataset<Label> testingDataset = new MutableDataset<>(irisesSource);

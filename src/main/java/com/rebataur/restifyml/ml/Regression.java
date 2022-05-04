@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.dskube.ml;
+package com.rebataur.restifyml.ml;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
-import com.rebataur.dskube.ModelBuildingDTO;
-import com.rebataur.dskube.entities.DataColumn;
-import com.rebataur.dskube.entities.Experiment;
-import com.rebataur.dskube.repositories.ColumnRepository;
-import com.rebataur.dskube.repositories.DataSourceRepository;
-import com.rebataur.dskube.repositories.ExperimentRepository;
+import com.rebataur.restifyml.ModelBuildingDTO;
+import com.rebataur.restifyml.entities.DataColumn;
+import com.rebataur.restifyml.entities.Experiment;
+import com.rebataur.restifyml.repositories.ColumnRepository;
+import com.rebataur.restifyml.repositories.DataSourceRepository;
+import com.rebataur.restifyml.repositories.ExperimentRepository;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,7 +46,7 @@ import org.tribuo.util.Util;
 @Slf4j
 public class Regression {
 
-    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\restifyml_datastore\\uploads\\";
 
     @Autowired
     private ExperimentRepository experimentRepository;
@@ -126,7 +126,7 @@ public class Regression {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(tmpFile))) {
             oos.writeObject(xgbModel);
         }
-        com.rebataur.dskube.entities.DataSource ds = dataSourceRepository.findById(experiment.getDatasource().getId()).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));;
+        com.rebataur.restifyml.entities.DataSource ds = dataSourceRepository.findById(experiment.getDatasource().getId()).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));;
 //        ds.setModelDataFileName(modelDataFileName);
 //        dataSourceRepository.save(ds);
         ds.setModelFileName(modelFileName);

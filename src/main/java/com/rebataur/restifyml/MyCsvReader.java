@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.dskube;
+package com.rebataur.restifyml;
 
 /*
  * Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,32 +1,29 @@
-package com.rebataur.dskube.entities;
+package com.rebataur.restifyml.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
 @Data
-public class Experiment implements Serializable {
+public class DataColumn implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotBlank(message = "Name is mandatory")
-    private String name,outcome;
- 
-    @OneToOne
-    private DataSource datasource;
-    @OneToOne
-    private DataColumn dataColumn;
+    private String name, type;
+    private String actualType;
+    private String treatmentType;
+    private String originalNamePreSplit;
     
-    private String modelAlgo ;
-    private int seed;
-    private double trainProportion;
- 
-    private String type;
+    
 }

@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.rebataur.dskube.ml;
+package com.rebataur.restifyml.ml;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
-import com.rebataur.dskube.ModelBuildingDTO;
-import com.rebataur.dskube.entities.DataColumn;
-import com.rebataur.dskube.entities.DataSource;
-import com.rebataur.dskube.entities.Experiment;
-import com.rebataur.dskube.repositories.ColumnRepository;
-import com.rebataur.dskube.repositories.DataSourceRepository;
-import com.rebataur.dskube.repositories.ExperimentRepository;
+import com.rebataur.restifyml.ModelBuildingDTO;
+import com.rebataur.restifyml.entities.DataColumn;
+import com.rebataur.restifyml.entities.DataSource;
+import com.rebataur.restifyml.entities.Experiment;
+import com.rebataur.restifyml.repositories.ColumnRepository;
+import com.rebataur.restifyml.repositories.DataSourceRepository;
+import com.rebataur.restifyml.repositories.ExperimentRepository;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,7 +54,7 @@ public class Classification {
     @Autowired
     private ColumnRepository columnRepository;
 
-    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\restifyml_datastore\\uploads\\";
 
     public ModelBuildingDTO classify(long id, ModelBuildingDTO mDTO) throws IOException, ClassNotFoundException, com.opencsv.exceptions.CsvException {
         Experiment experiment = experimentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid experiment Id:" + id));

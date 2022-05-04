@@ -1,6 +1,6 @@
-package com.rebataur.dskube;
+package com.rebataur.restifyml;
 
-//package com.rebataur.dskube.bkp;
+//package com.rebataur.RestifyML.bkp;
 //
 //import javax.validation.Valid;
 //
@@ -11,7 +11,7 @@ package com.rebataur.dskube;
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PostMapping;
-////import  com.rebataur.dskube.Word2VecRawTextExample;
+////import  com.rebataur.RestifyML.Word2VecRawTextExample;
 //@Controller
 //public class UserController {
 //    

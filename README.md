@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/rebataur/dskube">
+  <a href="https://github.com/rebataur/RestifyML">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -15,14 +15,14 @@
   <p align="center">
     AI/ML For All!
     <br />
-    <a href="https://github.com/rebataur/dskube"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/rebataur/RestifyML"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/rebataur/dskube">View Demo</a>
+    <a href="https://github.com/rebataur/RestifyML">View Demo</a>
     ·
-    <a href="https://github.com/rebataur/dskube/issues">Report Bug</a>
+    <a href="https://github.com/rebataur/RestifyML/issues">Report Bug</a>
     ·
-    <a href="https://github.com/rebataur/dskube/issues">Request Feature</a>
+    <a href="https://github.com/rebataur/RestifyML/issues">Request Feature</a>
   </p>
 </div>
 
@@ -74,7 +74,7 @@ This tool helps Developers/Founders or CXO to quickly experiment with data and g
 To get started clone this project or download the released jar file.
 In your directory 
 ```
-java -jar dskube.jar
+java -jar RestifyML.jar
 ```
 Navigate to http://localhost:8080
 
@@ -90,20 +90,20 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. To run download the latest release jar file
    ```sh
-   java -jar dskube.jar
+   java -jar RestifyML.jar
    ```
 2. To build yourself, clone the repo
    ```sh
-   git clone https://github.com/rebataur/dskube
+   git clone https://github.com/rebataur/RestifyML
    ```
 3. Install NPM packages
    ```sh
-   cd dskube
+   cd RestifyML
    mvn clean package
    ```
 4. Run the jar file
    ```sh
-   java -jar target/dskube.jar
+   java -jar target/RestifyML.jar
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -121,7 +121,7 @@ _Below is an example of how you can instruct your audience on installing and set
     - [ ] Models
     - [ ] API
 
-See the [open issues](https://github.com/rebataur/dskube/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/rebataur/RestifyML/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -161,7 +161,7 @@ Twitter - [@rebataur](https://twitter.com/rebataur)
 
 Email - hello at rebataur.com
 
-Project Link: [https://github.com/rebataur/dskube](https://github.com/rebataur/dskube)
+Project Link: [https://github.com/rebataur/RestifyML](https://github.com/rebataur/RestifyML)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

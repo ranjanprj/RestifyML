@@ -1,16 +1,16 @@
-package com.rebataur.dskube;
+package com.rebataur.restifyml;
 
-import com.rebataur.dskube.ml.Regression;
-import com.rebataur.dskube.ml.Classification;
+import com.rebataur.restifyml.ml.Regression;
+import com.rebataur.restifyml.ml.Classification;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVWriter;
-import com.rebataur.dskube.entities.DataColumn;
-import com.rebataur.dskube.entities.DataSource;
-import com.rebataur.dskube.entities.Experiment;
-import com.rebataur.dskube.repositories.ColumnRepository;
-import com.rebataur.dskube.repositories.DataSourceRepository;
-import com.rebataur.dskube.repositories.ExperimentRepository;
+import com.rebataur.restifyml.entities.DataColumn;
+import com.rebataur.restifyml.entities.DataSource;
+import com.rebataur.restifyml.entities.Experiment;
+import com.rebataur.restifyml.repositories.ColumnRepository;
+import com.rebataur.restifyml.repositories.DataSourceRepository;
+import com.rebataur.restifyml.repositories.ExperimentRepository;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -62,7 +62,7 @@ public class ServiceController {
     @Autowired
     private Regression regression;
 
-    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\restifyml_datastore\\uploads\\";
 
     @PostMapping("/experiment/{id}/datacleansing")
     public ColumnCleansingDTO experimentDataCleansingColumn(@PathVariable("id") long id, @RequestBody ColumnCleansingDTO dcDTO) throws IOException {

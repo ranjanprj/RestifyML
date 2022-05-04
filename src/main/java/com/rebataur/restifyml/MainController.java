@@ -1,11 +1,11 @@
-package com.rebataur.dskube;
+package com.rebataur.restifyml;
 
-import com.rebataur.dskube.entities.DataColumn;
-import com.rebataur.dskube.entities.DataSource;
-import com.rebataur.dskube.entities.Experiment;
-import com.rebataur.dskube.repositories.ColumnRepository;
-import com.rebataur.dskube.repositories.DataSourceRepository;
-import com.rebataur.dskube.repositories.ExperimentRepository;
+import com.rebataur.restifyml.entities.DataColumn;
+import com.rebataur.restifyml.entities.DataSource;
+import com.rebataur.restifyml.entities.Experiment;
+import com.rebataur.restifyml.repositories.ColumnRepository;
+import com.rebataur.restifyml.repositories.DataSourceRepository;
+import com.rebataur.restifyml.repositories.ExperimentRepository;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -40,7 +40,7 @@ public class MainController {
     private ColumnRepository columnRepository;
 
     // relative path
-    private final String UPLOAD_DIR = "..\\dskube_datastore\\uploads\\";
+    private final String UPLOAD_DIR = "..\\restifyml_datastore\\uploads\\";
 
 //    @Autowired
 //    public MainController(ExperimentRepository experimentRepository, DataSourceRepository dataSourceRepository, ColumnRepository columnRepository) {

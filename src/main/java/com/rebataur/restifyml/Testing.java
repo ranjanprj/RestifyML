@@ -1,4 +1,4 @@
-package com.rebataur.dskube;
+package com.rebataur.restifyml;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Testing {
 
     public static void main(String[] args) throws IOException {
         print("==============================");
-        Table table = Table.read().csv("C:\\3Projects\\dskube\\uploads\\corona_ref_data.csv");
+        Table table = Table.read().csv("C:\\3Projects\\RestifyML\\uploads\\corona_ref_data.csv");
         print(table.column("gender").unique().asList().stream().filter(x -> x.toString().length() > 0).collect(Collectors.toList()));
         List<?> list = table.column("gender").unique().asList().stream().filter(x -> x.toString().length() > 0).collect(Collectors.toList());
          

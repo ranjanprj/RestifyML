@@ -8,9 +8,9 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rebataur</groupId>
-    <artifactId>dskube</artifactId>
+    <artifactId>RestifyML</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dskube</name>
+    <name>RestifyML</name>
     <description>AI/ML Tool</description>
     <properties>
         <java.version>11</java.version>

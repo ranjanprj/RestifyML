@@ -103,7 +103,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 4. Run the jar file
    ```sh
-   java -jar target/RestifyML.jar
+   java -jar target/restifyml.jar
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>

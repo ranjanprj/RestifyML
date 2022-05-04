@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
  @SpringBootApplication 
  @EnableAutoConfiguration
- @ComponentScan(basePackages={"com.rebataur.RestifyML"})
- @EnableJpaRepositories(basePackages="com.rebataur.RestifyML.repositories")
+ @ComponentScan(basePackages={"com.rebataur.restifyml"})
+ @EnableJpaRepositories(basePackages="com.rebataur.restifyml.repositories")
  @EnableTransactionManagement
- @EntityScan(basePackages="com.rebataur.RestifyML.entities")
+ @EntityScan(basePackages="com.rebataur.restifyml.entities")
 public class RestifyMLApplication {
 	public static void main(String[] args) {	
 		SpringApplication.run(RestifyMLApplication.class, args);

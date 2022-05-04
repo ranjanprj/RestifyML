@@ -114,6 +114,8 @@
     </dependencies>
 
     <build>
+     
+    <finalName>restifyml</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

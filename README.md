@@ -13,7 +13,7 @@
   <h3 align="center">RestifyML</h3>
 
   <p align="center">
-    AI/ML For All!
+    AI/ML For Java Developers!
     <br />
     <a href="https://github.com/rebataur/RestifyML"><strong>Explore the docs »</strong></a>
     <br />
@@ -61,7 +61,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This tool helps Developers/Founders or CXO to quickly experiment with data and generate AI ML REST API to consume back into their application
+This tool helps Java Developers to quickly experiment with data and generate AI ML REST API to consume back into their application
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
